@@ -12,8 +12,12 @@ from sections.footer import render_footer
 from sections.work_style_section import render_work_style
 from sections.experiences_section import render_experiences
 from sections.vision_section import render_vision
+from sections.game_section import render_game, render_runner
 
-# Ordre final :
+setup_page()
+init_session_state()
+load_css()
+
 render_hero()
 render_game()
 render_world()
@@ -21,8 +25,5 @@ render_work_style()
 render_projects()
 render_experiences()
 render_vision()
+render_runner()
 render_footer()
-setup_page()
-init_session_state()
-load_css()
-
