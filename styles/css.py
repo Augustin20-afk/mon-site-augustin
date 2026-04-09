@@ -581,11 +581,11 @@ def load_css():
 }
 
 .footer-btn.btn-mail {
-    background: #f1f5f9;
-    color: #0f172a;
-    border: 1px solid #e2e8f0;
+    background: #2d3748;
+    color: #ffffff !important;
+    border: 1px solid #4a5568;
 }
-.footer-btn.btn-mail:hover { background: #e2e8f0; }
+.footer-btn.btn-mail:hover { background: #3a4a60; color: #ffffff !important; }
 
 .footer-btn.btn-linkedin {
     background: #0077b5;
