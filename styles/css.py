@@ -355,6 +355,9 @@ def load_css():
 .section-header {
     text-align: center;
     margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-tag {
@@ -380,8 +383,9 @@ def load_css():
 .section-desc {
     font-size: 1rem;
     color: #64748b;
-    max-width: 480px;
+    max-width: 600px;
     margin: 0 auto;
+    text-align: center;
 }
 
 /* ── PILLS IDENTITÉ ───────────────────────────────────── */
