@@ -1,35 +1,148 @@
-# config/settings.py
+# sections/world_section.py
 
-# --- Page config ---
-SITE_TITLE    = "Augustin Leclercq"
-SITE_ICON     = "🌍"
-SITE_LAYOUT   = "wide"
-SIDEBAR_STATE = "collapsed"
+import streamlit as st
+from components.photo import get_image_base64
+from config.settings import (
+    PHOTO_RUNNER,
+    PHOTO_VIBES,
+    PHOTO_CAMPING,
+    PHOTO_TENT,
+    PHOTO_NATURE,
+    PHOTO_DOG,
+)
 
-# --- Hero ---
-HERO_TITLE    = "Augustin Leclercq"
-HERO_SUBTITLE = "Étudiant en business development, engagé sur le terrain et tourné vers l'action"
-HERO_INTRO    = "Je m'appelle Augustin Leclercq, et j'évolue aujourd'hui dans les achats projets, au sein d'un environnement exigeant où la rigueur, la coordination et l'implication font la différence.\n\nCe site a été pensé comme une autre manière de me découvrir : au-delà d'un CV, à travers ma façon de travailler, ce qui m'anime, et ce que je construis au quotidien."
 
-# --- Assets ---
-PHOTO_PATH    = "assets/images/moi.png"
-CV_PATH       = "assets/docs/CV_Augustin.pdf"
+def _img(path: str, css_class: str = "world-photo", alt: str = "") -> str:
+    b64 = get_image_base64(path)
+    if not b64:
+        return ""
+    ext = path.split(".")[-1].lower()
+    mime = "jpeg" if ext in ("jpg", "jpeg") else ext
+    return f'<img src="data:image/{mime};base64,{b64}" class="{css_class}" alt="{alt}">'
 
-# --- Contact ---
-LINKEDIN_URL  = "https://www.linkedin.com/in/augustin-leclercq-705b46235/"
-EMAIL         = "augustin.leclercq.ci@gmail.com"
 
-# --- Runner ---
-RUNNER_PHOTO_PATH = "assets/images/runner.png"
+def render_world() -> None:
+    """Affiche la section Mon monde."""
 
-# --- Photos Mon monde ---
-PHOTO_RUNNER    = "assets/images/runner.png"
-PHOTO_VIBES     = "assets/images/good_vibes.jpg"
-PHOTO_CAMPING   = "assets/images/camping_view.jpg"
-PHOTO_TENT      = "assets/images/camping_tent.jpg"
-PHOTO_NATURE    = "assets/images/nature.jpg"
-PHOTO_DOG       = "assets/images/dog.jpg"
+    st.markdown('<div class="world-wrapper">', unsafe_allow_html=True)
 
-# --- Logo ---
-COLOPLAST_LOGO       = "assets/images/coloplast.png"
-COLOPLAST_LOGO_PATH  = "assets/images/coloplast.png"
+    st.markdown(
+        """
+        <div class="section-header">
+            <span class="section-tag">Mon monde</span>
+            <h2 class="section-title">Au-delà du profil : ce qui me construit</h2>
+            <p class="section-desc">
+                Une énergie forgée par le terrain, la famille, le sport et l'envie constante d'avancer.
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        """
+        <div class="identity-pills">
+            <span class="identity-pill">🌍 Terrain</span>
+            <span class="identity-pill">⚡ Rigueur</span>
+            <span class="identity-pill">🎯 Ambition</span>
+            <span class="identity-pill">🤝 Engagement</span>
+            <span class="identity-pill">🔍 Curiosité</span>
+            <span class="identity-pill">🔥 Énergie</span>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    # --- Ligne 1 : Sport + Camping ---
+    col1, col2 = st.columns(2, gap="medium")
+
+    with col1:
+        st.markdown(
+            f"""
+            <div class="world-card world-card-photo">
+                {_img(PHOTO_RUNNER, "world-photo", "Marathon Barcelone")}
+                <div class="world-card-overlay">
+                    <span class="world-card-overlay-icon">⚽</span>
+                    <h3 class="world-card-title">Le sport, école d'exigence</h3>
+                    <p class="world-card-text">
+                        Marathon de Barcelone, marathon du Médoc déguisé en cuisinier —
+                        au-delà de l'effort, j'y retrouve une logique qui me ressemble :
+                        discipline, constance, dépassement de soi et capacité à garder le cap.
+                    </p>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with col2:
+        st.markdown(
+            f"""
+            <div class="world-card world-card-photo">
+                {_img(PHOTO_CAMPING, "world-photo", "Camping")}
+                <div class="world-card-overlay">
+                    <span class="world-card-overlay-icon">🏕️</span>
+                    <h3 class="world-card-title">Le camping familial, mon premier terrain</h3>
+                    <p class="world-card-text">
+                        Grandir dans un business familial, c'est comprendre tôt que rien n'avance tout seul.
+                        Le camping m'a transmis une culture du terrain, du service, de l'énergie et du concret.
+                        C'est là que s'est construit une partie essentielle de ma façon de travailler aujourd'hui.
+                    </p>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    # --- Ligne 2 : Good vibes + Chien ---
+    col3, col4 = st.columns(2, gap="medium")
+
+    with col3:
+        st.markdown(
+            f"""
+            <div class="world-card world-card-photo">
+                {_img(PHOTO_VIBES, "world-photo", "Good vibes")}
+                <div class="world-card-overlay">
+                    <span class="world-card-overlay-icon">🚀</span>
+                    <h3 class="world-card-title">Construire des choses concrètes</h3>
+                    <p class="world-card-text">
+                        Du terrain familial aux outils que je développe aujourd'hui,
+                        j'ai toujours aimé transformer une idée en quelque chose d'utile,
+                        lisible et concret.
+                    </p>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with col4:
+        st.markdown(
+            f"""
+            <div class="world-card world-card-photo">
+                {_img(PHOTO_DOG, "world-photo", "Mon chien")}
+                <div class="world-card-overlay">
+                    <span class="world-card-overlay-icon">🌍</span>
+                    <h3 class="world-card-title">Voyages, ouverture et recul</h3>
+                    <p class="world-card-text">
+                        Voyager, c'est sortir de ses repères, observer et apprendre autrement.
+                        J'y trouve une ouverture qui nourrit ma curiosité et ma façon d'aborder
+                        les situations : avec adaptabilité, écoute et envie de comprendre plus large.
+                    </p>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    # --- Citation ---
+    st.markdown(
+        """
+        <div class="world-quote">
+            "Le terrain m'a appris une chose simple : la valeur ne se raconte pas, elle se construit."
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown('</div>', unsafe_allow_html=True)
