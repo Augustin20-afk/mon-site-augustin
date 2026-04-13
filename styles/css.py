@@ -21,6 +21,13 @@ def load_css():
     max-width: 960px;
     margin: 0 auto;
 }
+.footer-subdesc {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0.8rem auto 0 auto;
+}
 
 .current-card {
     background: #ffffff;

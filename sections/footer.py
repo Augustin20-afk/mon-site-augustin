@@ -10,21 +10,50 @@ def render_footer() -> None:
 
     st.markdown('<div class="footer-wrapper">', unsafe_allow_html=True)
 
-    # --- Séparateur ---
     st.markdown('<div class="footer-divider"></div>', unsafe_allow_html=True)
 
-    # --- Message final ---
+    cv_b64 = get_file_as_base64(CV_PATH)
+    cv_button = (
+        f'<a href="data:application/pdf;base64,{cv_b64}" '
+        f'download="CV_Augustin.pdf" class="footer-btn btn-cv">Découvrir mon CV</a>'
+        if cv_b64
+        else ""
+    )
+
     st.markdown(
-        """
+        f"""
         <div class="footer-content">
-            <h2 class="footer-title">Travaillons ensemble.</h2>
+            <span class="section-tag">Alternance</span>
+            <h2 class="footer-title">À la recherche d'une alternance à partir de septembre 2026</h2>
             <p class="footer-desc">
-                Une opportunité, un projet, une idée à explorer ?<br>
-                Je suis toujours partant pour une bonne conversation.
+                Je suis actuellement à la recherche d'une alternance dans un environnement
+                où je pourrai continuer à apprendre, m'investir pleinement et contribuer concrètement.
+                J'avance avec sérieux, curiosité et envie de bien faire.
             </p>
+            <p class="footer-subdesc">
+                Si mon profil, mon énergie et ma manière de travailler résonnent avec vos attentes,
+                je serais ravi d'échanger lors d'un entretien ou d'une vraie conversation.
+            </p>
+        </div>
+
+        <div class="footer-buttons">
+            <a href="mailto:{EMAIL}" class="footer-btn btn-mail">
+                ✉️ Échanger avec moi
+            </a>
+            <a href="{LINKEDIN_URL}" target="_blank" class="footer-btn btn-linkedin">
+                LinkedIn
+            </a>
+            {cv_button}
+        </div>
+
+        <div class="footer-signature">
+            Augustin Leclercq · Fait avec Python &amp; Streamlit · 2025
         </div>
         """,
         unsafe_allow_html=True,
+    )
+
+    st.markdown('</div>', unsafe_allow_html=True)
     )
 
     # --- Boutons contact ---
