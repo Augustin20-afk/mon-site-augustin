@@ -21,6 +21,20 @@ def load_css():
     max-width: 960px;
     margin: 0 auto;
 }
+/* ── BOUTON PARCOURS ──────────────────────────────────── */
+div[data-testid="stButton"] button {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.55rem 1.2rem !important;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+}
+
+div[data-testid="stButton"] button:hover {
+    background: #1d4ed8 !important;
+}
 .footer-subdesc {
     font-size: 0.95rem;
     color: #64748b;
