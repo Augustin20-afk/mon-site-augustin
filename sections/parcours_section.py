@@ -36,29 +36,18 @@ def _logo(path: str) -> str:
 def render_parcours() -> None:
     """Affiche le flow chart parcours en pleine page."""
 
+    st.markdown("<div style='height: 60px;'></div>", unsafe_allow_html=True)
+
     if st.button("← Retour au site", key="back_btn"):
         st.session_state.show_parcours = False
         st.rerun()
 
     st.markdown(
         """
-        <div style="text-align:center;padding:1rem 2rem 3rem 2rem;
-                    max-width:800px;margin:0 auto;">
-            <span class="section-tag">Flow Chart</span>
-            <h1 style="font-size:2.2rem;font-weight:700;color:#0f172a;
-                       margin:0.8rem 0 0.5rem 0;">
-                Comment je me suis construit
-            </h1>
-            <p style="font-size:1rem;color:#64748b;line-height:1.7;">
-                Au-delà d'un parcours linéaire, voici les étapes, les environnements
-                et les expériences qui ont façonné ma manière de travailler,
-                d'avancer et de me projeter.
-            </p>
-        </div>
+        ...
         """,
         unsafe_allow_html=True,
     )
-
     steps = [
         {
             "num": "01",
