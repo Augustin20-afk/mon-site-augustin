@@ -29,7 +29,7 @@ QUIZ_QUESTIONS = [
         "question": "En dehors du travail, comment Augustin recharge-t-il son énergie ?",
         "answers": [
             "Netflix et silence total",
-            "Sport, nature, amis et projets perso",
+            "Sport, nature, proches et projets perso",
             "Il prépare ses slides pour le lundi"
         ],
         "correct": "Sport, nature, amis et projets perso"
@@ -44,7 +44,7 @@ QUIZ_QUESTIONS = [
         "correct": "Un business familial qui l'a construit dès l'enfance"
     },
     {
-        "question": "Quelle habitude l'aide à rester concentré et engagé ?",
+        "question": "Quelle habitude l'aide à rester concentré et engagé au travail ?",
         "answers": [
             "Il boit rien et s'endort sur le bureau",
             "Une routine claire, du sport et un bon café",
@@ -55,7 +55,7 @@ QUIZ_QUESTIONS = [
     {
         "question": "Dans quel type de défi Augustin aime-t-il se lancer ?",
         "answers": [
-            "Le marathon du Médoc — déguisé en cuisinier",
+            "Le marathon du Médoc — déguisé ",
             "Un tournoi de pétanque régional",
             "Un concours de karaoké d'entreprise"
         ],
@@ -65,7 +65,7 @@ QUIZ_QUESTIONS = [
         "question": "Quel outil Augustin a développé dans son temps libre ?",
         "answers": [
             "Une appli de recettes de cuisine",
-            "Un radar à news Forex sous Streamlit",
+            "Un radar à news Forex avec Streamlit",
             "Un jeu de cartes Pokémon en Python"
         ],
         "correct": "Un radar à news Forex sous Streamlit"
