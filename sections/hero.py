@@ -50,7 +50,6 @@ def _render_buttons() -> None:
     st.markdown(
         f"""
         <div class="hero-buttons">
-            <a href="#parcours" class="hero-btn btn-parcours">Voir mon parcours</a>
             <a href="{LINKEDIN_URL}" target="_blank" class="hero-btn btn-linkedin">LinkedIn</a>
             <a href="mailto:{EMAIL}" class="hero-btn btn-mail">Me contacter</a>
             {cv_button}
@@ -61,3 +60,7 @@ def _render_buttons() -> None:
         """,
         unsafe_allow_html=True,
     )
+
+    if st.button("📋 Voir mon parcours", key="parcours_btn"):
+        st.session_state.show_parcours = True
+        st.rerun()

@@ -13,18 +13,21 @@ from sections.project_section import render_projects
 from sections.experiences_section import render_experiences
 from sections.vision_section import render_vision
 from sections.footer import render_footer
+from sections.parcours_section import render_parcours
 
+if st.session_state.get("show_parcours", False):
+    render_parcours()
 setup_page()
 init_session_state()
 load_css()
 
 render_hero()
-render_game()
-render_current()
-render_world()
-render_work_style()
-render_projects()
-render_experiences()
-render_vision()
-render_runner()
-render_footer()
+    render_game()
+    render_current()
+    render_world()
+    render_work_style()
+    render_projects()
+    render_experiences()
+    render_vision()
+    render_runner()
+    render_footer()
