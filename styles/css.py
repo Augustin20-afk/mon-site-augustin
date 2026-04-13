@@ -143,6 +143,7 @@ div[data-testid="stButton"] button:hover {
             width: 220px;
             height: 220px;
             object-fit: cover;
+            object-position: center top;
             border-radius: 50%;
             border: 3px solid #ffffff20;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
