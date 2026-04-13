@@ -15,6 +15,72 @@ def load_css():
             padding-top: 2rem;
             padding-bottom: 3rem;
         }
+        /* ── CURRENT SECTION ──────────────────────────────────── */
+.current-wrapper {
+    padding: 3rem 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.current-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #2563eb;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.current-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.current-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+
+.current-company {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.2rem;
+}
+
+.current-role {
+    font-size: 0.95rem;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.current-text {
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+.current-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.current-tag {
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+}
         .hero-box {
             background: rgba(255,255,255,0.78);
             border: 1px solid rgba(255,255,255,0.6);

@@ -13,13 +13,18 @@ from sections.work_style_section import render_work_style
 from sections.experiences_section import render_experiences
 from sections.vision_section import render_vision
 from sections.game_section import render_game, render_runner
+from sections.current_section import render_current
 
 setup_page()
 init_session_state()
 load_css()
 
+
+
+# Ordre mis à jour :
 render_hero()
 render_game()
+render_current()      
 render_world()
 render_work_style()
 render_projects()
