@@ -8,39 +8,67 @@ from config.settings import PHOTO_PATH, RUNNER_PHOTO_PATH
 
 QUIZ_QUESTIONS = [
     {
-        "question": "Quel marathon a couru Augustin ?",
-        "answers": ["Paris", "Barcelone", "Londres"],
-        "correct": "Barcelone"
+        "question": "Qu'est-ce qui motive le plus Augustin dans ce qu'il entreprend ?",
+        "answers": [
+            "Finir avant tout le monde",
+            "Construire des choses concrètes et créer de la valeur",
+            "Éviter les réunions du lundi"
+        ],
+        "correct": "Construire des choses concrètes et créer de la valeur"
     },
     {
-        "question": "Quel marathon déguisé a couru Augustin ?",
-        "answers": ["Chicago", "Berlin", "Médoc"],
-        "correct": "Médoc"
+        "question": "Quel environnement lui correspond le mieux pour progresser ?",
+        "answers": [
+            "Un environnement calme sans contraintes",
+            "Un environnement exigeant, structuré et formateur",
+            "Un environnement où personne ne vérifie rien"
+        ],
+        "correct": "Un environnement exigeant, structuré et formateur"
+    },
+    {
+        "question": "En dehors du travail, comment Augustin recharge-t-il son énergie ?",
+        "answers": [
+            "Netflix et silence total",
+            "Sport, nature, amis et projets perso",
+            "Il prépare ses slides pour le lundi"
+        ],
+        "correct": "Sport, nature, amis et projets perso"
+    },
+    {
+        "question": "Quelle place le camping a-t-il dans son univers ?",
+        "answers": [
+            "Une activité qu'il évite soigneusement",
+            "Un business familial qui l'a construit dès l'enfance",
+            "Un endroit où il va juste pour ne rien faire"
+        ],
+        "correct": "Un business familial qui l'a construit dès l'enfance"
+    },
+    {
+        "question": "Quelle habitude l'aide à rester concentré et engagé ?",
+        "answers": [
+            "Il boit rien et s'endort sur le bureau",
+            "Une routine claire, du sport et un bon café",
+            "Il écoute du heavy metal à fond"
+        ],
+        "correct": "Une routine claire, du sport et un bon café"
+    },
+    {
+        "question": "Dans quel type de défi Augustin aime-t-il se lancer ?",
+        "answers": [
+            "Le marathon du Médoc — déguisé en cuisinier",
+            "Un tournoi de pétanque régional",
+            "Un concours de karaoké d'entreprise"
+        ],
+        "correct": "Le marathon du Médoc — déguisé en cuisinier"
     },
     {
         "question": "Quel outil Augustin a développé dans son temps libre ?",
-        "answers": ["Une appli de recettes", "Un radar à news Forex", "Un jeu de cartes Pokémon"],
-        "correct": "Un radar à news Forex"
-    },
-    {
-        "question": "Quelle est la priorité absolue d'Augustin un vendredi soir ?",
-        "answers": ["Réviser ses KPIs", "Appeler son banquier", "Prévoir le weekend"],
-        "correct": "Prévoir le weekend"
-    },
-    {
-        "question": "Au camping, Augustin est plutôt ?",
-        "answers": ["Celui qui dort jusqu'à midi", "Celui qui oublie la tente", "Celui qui gère la logistique et le feu"],
-        "correct": "Celui qui gère la logistique et le feu"
-    },
-    {
-        "question": "Ce qui motive Augustin au quotidien ?",
-        "answers": ["Finir à 17h pile", "Construire des projets concrets et créer de la valeur", "Éviter les réunions du lundi"],
-        "correct": "Construire des projets concrets et créer de la valeur"
-    },
-    {
-        "question": "Quel liquide boit Augustin à 13h30 pour rester concentré ?",
-        "answers": ["Il boit rien et s'endort sur le bureau", "VODKA", "Café"],
-        "correct": "Café"
+        "answers": [
+            "Une appli de recettes de cuisine",
+            "Un radar à news Forex sous Streamlit",
+            "Un jeu de cartes Pokémon en Python"
+        ],
+        "correct": "Un radar à news Forex sous Streamlit"
     },
 ]
 
@@ -51,17 +79,17 @@ def render_game() -> None:
     st.markdown('<div class="game-wrapper">', unsafe_allow_html=True)
 
     st.markdown(
-        """
-        <div class="section-header">
-            <span class="section-tag">Quiz</span>
-            <h2 class="section-title">Tu penses me connaître ? 🎯</h2>
-            <p class="section-desc">
-                7 questions. Quelques secondes. Verdict final.
-            </p>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    """
+    <div class="section-header">
+        <span class="section-tag">Quiz</span>
+        <h2 class="section-title">Un format rapide pour découvrir mon univers 🎯</h2>
+        <p class="section-desc">
+            Quelques questions pour découvrir ma manière de fonctionner et ce qui me motive.
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
     quiz_json = json.dumps(QUIZ_QUESTIONS)
 
