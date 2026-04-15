@@ -1,6 +1,7 @@
 # app.py
 
 import streamlit as st
+from sections.navbar_section import render_navbar
 from core.page_config import setup_page
 from core.session_state import init_session_state
 from styles.css import load_css
@@ -22,6 +23,7 @@ load_css()
 if st.session_state.get("show_parcours", False):
     render_parcours()
 else:
+    render_navbar()
     render_hero()
     render_game()
     render_current()
