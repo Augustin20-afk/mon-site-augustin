@@ -15,7 +15,7 @@ def render_footer() -> None:
     cv_b64 = get_file_as_base64(CV_PATH)
     cv_button = (
         f'<a href="data:application/pdf;base64,{cv_b64}" '
-        f'download="CV_Augustin.pdf" class="footer-btn btn-cv">Découvrir mon CV</a>'
+       f'download="CV_Augustin.pdf" class="footer-btn btn-cv">Télécharger mon CV</a>'
         if cv_b64
         else ""
     )
@@ -47,7 +47,8 @@ def render_footer() -> None:
         </div>
 
         <div class="footer-signature">
-            Augustin Leclercq · Fait avec Python &amp; Streamlit · 2025
+            Augustin Leclercq · Site développé avec Python et Streamlit · 2025
+
         </div>
         """,
         unsafe_allow_html=True,

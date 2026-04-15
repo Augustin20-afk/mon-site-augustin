@@ -136,13 +136,5 @@ def render_world() -> None:
         )
 
     # --- Citation ---
-    st.markdown(
-        """
-        <div class="world-quote">
-            "Le terrain m'a appris une chose simple : la valeur ne se raconte pas, elle se construit."
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
 
     st.markdown('</div>', unsafe_allow_html=True)
