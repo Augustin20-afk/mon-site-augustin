@@ -47,20 +47,15 @@ PROJECTS = [
 
 def render_projects() -> None:
     """Affiche la section Projets."""
-
+    st.markdown('<div id="projets"></div>', unsafe_allow_html=True)
+    
     st.markdown(
         """
-        <div class="section-header" style="padding: 3rem 2rem 1rem 2rem; max-width:960px; margin:0 auto; text-align:center;">
-            <span class="section-tag">Projets</span>
-            <h2 class="section-title">Ce que je construis</h2>
-            <p class="section-desc">
-                Des projets concrets, à l'intersection du terrain, de l'analyse et de l'ambition.
-            </p>
-        </div>
+        <div class="section-header" ...>
+        ...
         """,
         unsafe_allow_html=True,
     )
-
     # Construire les cards
     cards_left = ""
     cards_right = ""

@@ -7,7 +7,8 @@ from core.helpers import get_file_as_base64
 
 def render_footer() -> None:
     """Affiche le footer du site."""
-
+    
+    st.markdown('<div id="contact"></div>', unsafe_allow_html=True)
     st.markdown('<div class="footer-wrapper">', unsafe_allow_html=True)
 
     st.markdown('<div class="footer-divider"></div>', unsafe_allow_html=True)

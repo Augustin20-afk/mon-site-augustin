@@ -5,9 +5,9 @@ import streamlit as st
 
 def render_experiences() -> None:
     """Affiche la section Expériences marquantes."""
-
-    st.markdown('<div class="experiences-wrapper">', unsafe_allow_html=True)
-
+    
+    st.markdown('<div id="experiences"></div>', unsafe_allow_html=True)
+    st.markdown('<div class="experiences-wrapper">', unsafe_allow_html=True)st.markdown('<div id="experiences"></div>', unsafe_allow_html=True)
     st.markdown(
         """
         <div class="section-header">

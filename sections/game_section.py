@@ -83,6 +83,7 @@ QUIZ_QUESTIONS = [
 def render_game() -> None:
     """Affiche uniquement le quiz."""
 
+    st.markdown('<div id="quiz"></div>', unsafe_allow_html=True)
     st.markdown('<div class="game-wrapper">', unsafe_allow_html=True)
 
     st.markdown(

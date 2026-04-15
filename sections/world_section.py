@@ -23,9 +23,8 @@ def _img(path: str, css_class: str = "world-photo", alt: str = "") -> str:
 
 def render_world() -> None:
     """Affiche la section Mon monde."""
-
+    st.markdown('<div id="apropos"></div>', unsafe_allow_html=True)
     st.markdown('<div class="world-wrapper">', unsafe_allow_html=True)
-
     st.markdown(
         """
         <div class="section-header">

@@ -16,11 +16,9 @@ from core.helpers import get_file_as_base64
 
 def render_hero() -> None:
     """Affiche la section Hero complète."""
-
+    st.markdown('<div id="accueil"></div>', unsafe_allow_html=True)
     st.markdown('<div class="hero-wrapper">', unsafe_allow_html=True)
-
     col_photo, col_text = st.columns([1, 2], gap="large")
-
     with col_photo:
         st.markdown('<div class="hero-photo-container">', unsafe_allow_html=True)
         display_profile_photo(PHOTO_PATH, css_class="profile-photo")
