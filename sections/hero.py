@@ -49,8 +49,7 @@ def _render_buttons() -> None:
         f"""
         <div class="hero-buttons">
             <a href="{LINKEDIN_URL}" target="_blank" class="hero-btn btn-linkedin">LinkedIn</a>
-            <a href="mailto:{EMAIL}" class="hero-btn btn-mail">Me contacter</a>
-            {cv_button}
+            <a href="mailto:{EMAIL}" class="hero-btn btn-mail">📧 augustin.leclercq.ci@gmail.com</a>            {cv_button}
         </div>
         <p class="hero-tagline">
             Rigueur dans le travail. Énergie dans l'action. Humain dans l'approche.
