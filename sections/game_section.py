@@ -79,27 +79,28 @@ QUIZ_QUESTIONS = [
     },
 ]
 
+
 def render_game() -> None:
     """Affiche uniquement le quiz."""
 
     st.markdown('<div class="game-wrapper">', unsafe_allow_html=True)
 
     st.markdown(
-    """
-    <div class="section-header">
-        <span class="section-tag">Quiz</span>
-        <h2 class="section-title">Un format rapide pour découvrir mon univers 🎯</h2>
-        <p class="section-desc">
-            Quelques questions pour découvrir ma manière de fonctionner et ce qui me motive.
-        </p>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+        """
+        <div class="section-header">
+            <span class="section-tag">Quiz</span>
+            <h2 class="section-title">Un format rapide pour découvrir mon univers 🎯</h2>
+            <p class="section-desc">
+                Quelques questions pour découvrir ma manière de fonctionner et ce qui me motive.
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     quiz_json = json.dumps(QUIZ_QUESTIONS)
 
-   quiz_html = f"""
+    quiz_html = f"""
     <div id="game-container">
         <div id="quiz-section">
             <div id="quiz-header">
@@ -115,8 +116,7 @@ def render_game() -> None:
                     style="display:none;margin:1rem auto 0 auto;
                            background:#2563eb;color:white;border:none;
                            padding:0.65rem 1.8rem;border-radius:8px;
-                           font-size:0.9rem;font-weight:600;cursor:pointer;
-                           transition:background 0.2s;">
+                           font-size:0.9rem;font-weight:600;cursor:pointer;">
                     Question suivante →
                 </button>
             </div>
@@ -196,7 +196,6 @@ def render_game() -> None:
             font-size: 0.95rem; font-weight: 600; cursor: pointer;
         }}
         #restart-btn:hover {{ background: #2563eb; }}
-        #next-btn:hover {{ background: #1d4ed8 !important; }}
     </style>
 
     <script>
@@ -251,7 +250,6 @@ def render_game() -> None:
             const contextEl = document.getElementById('quiz-context');
             contextEl.textContent = context;
             contextEl.style.display = 'block';
-
             document.getElementById('next-btn').style.display = 'block';
         }}
 
@@ -308,168 +306,7 @@ def render_game() -> None:
     </script>
     """
 
-        <!-- RÉSULTAT FINAL -->
-        <div id="result-section" style="display:none;">
-            <div id="result-body">
-                <div id="result-emoji"></div>
-                <h3 id="result-title"></h3>
-                <p id="result-desc"></p>
-                <div id="result-scores"></div>
-                <button id="restart-btn" onclick="restartQuiz()">Rejouer 🔄</button>
-            </div>
-        </div>
-
-    </div>
-
-    <style>
-        #game-container {{
-            background: rgba(255,255,255,0.85);
-            border: 1px solid #e2e8f0;
-            border-radius: 20px;
-            padding: 2rem;
-            max-width: 860px;
-            margin: 0 auto;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-            font-family: 'Inter', sans-serif;
-        }}
-        #quiz-section {{ text-align: center; padding: 1rem; }}
-        #quiz-title {{ font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 1.5rem; }}
-        #question-counter {{
-            font-size: 0.8rem; color: #94a3b8;
-            text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.8rem;
-        }}
-        #question-text {{
-            font-size: 1.15rem; font-weight: 600; color: #0f172a;
-            margin-bottom: 1.2rem; min-height: 3rem;
-        }}
-        #answers-container {{
-            display: flex; flex-direction: column; gap: 0.6rem;
-            max-width: 500px; margin: 0 auto 1rem auto;
-        }}
-        .answer-btn {{
-            padding: 0.75rem 1.2rem; border-radius: 10px;
-            border: 2px solid #e2e8f0; background: #f8fafc;
-            color: #0f172a; font-size: 0.95rem; font-weight: 500;
-            cursor: pointer; transition: all 0.15s ease; text-align: left;
-        }}
-        .answer-btn:hover {{ background: #eff6ff; border-color: #3b82f6; }}
-        .answer-btn.correct {{ background: #dcfce7; border-color: #22c55e; color: #15803d; }}
-        .answer-btn.wrong {{ background: #fee2e2; border-color: #ef4444; color: #b91c1c; }}
-        #quiz-feedback {{ font-size: 1rem; font-weight: 600; min-height: 1.5rem; margin-top: 0.5rem; }}
-        #result-section {{ text-align: center; padding: 2rem 1rem; }}
-        #result-emoji {{ font-size: 3.5rem; margin-bottom: 1rem; }}
-        #result-title {{ font-size: 1.6rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; }}
-        #result-desc {{ font-size: 0.95rem; color: #64748b; margin-bottom: 1.5rem; }}
-        #result-scores {{
-            display: flex; justify-content: center; gap: 2rem;
-            margin-bottom: 1.5rem; flex-wrap: wrap;
-        }}
-        .score-block {{
-            background: #f1f5f9; border-radius: 12px;
-            padding: 0.8rem 1.5rem; text-align: center;
-        }}
-        .score-block .score-val {{ font-size: 1.8rem; font-weight: 700; color: #3b82f6; }}
-        .score-block .score-lbl {{
-            font-size: 0.78rem; color: #94a3b8;
-            text-transform: uppercase; letter-spacing: 0.06em;
-        }}
-        #restart-btn {{
-            background: #3b82f6; color: white; border: none;
-            padding: 0.7rem 2rem; border-radius: 10px;
-            font-size: 0.95rem; font-weight: 600; cursor: pointer;
-        }}
-        #restart-btn:hover {{ background: #2563eb; }}
-    </style>
-
-    <script>
-        const QUIZ = {quiz_json};
-        let quizIndex = 0;
-        let quizScore = 0;
-        let answered = false;
-
-        function showQuestion() {{
-            answered = false;
-            const q = QUIZ[quizIndex];
-            document.getElementById('question-counter').textContent =
-                'Question ' + (quizIndex + 1) + ' / ' + QUIZ.length;
-            document.getElementById('question-text').textContent = q.question;
-            document.getElementById('quiz-feedback').textContent = '';
-            const container = document.getElementById('answers-container');
-            container.innerHTML = '';
-            q.answers.forEach(a => {{
-                const btn = document.createElement('button');
-                btn.className = 'answer-btn';
-                btn.textContent = a;
-                btn.onclick = () => selectAnswer(a, q.correct);
-                container.appendChild(btn);
-            }});
-        }}
-
-        function selectAnswer(selected, correct) {{
-            if (answered) return;
-            answered = true;
-            const btns = document.querySelectorAll('.answer-btn');
-            btns.forEach(btn => {{
-                btn.disabled = true;
-                if (btn.textContent === correct) btn.classList.add('correct');
-                else if (btn.textContent === selected) btn.classList.add('wrong');
-            }});
-            const feedback = document.getElementById('quiz-feedback');
-            if (selected === correct) {{
-                quizScore++;
-                feedback.textContent = '✅ Bonne réponse !';
-                feedback.style.color = '#16a34a';
-            }} else {{
-                feedback.textContent = '❌ Raté — bonne réponse : ' + correct;
-                feedback.style.color = '#dc2626';
-            }}
-            setTimeout(() => {{
-                quizIndex++;
-                if (quizIndex < QUIZ.length) {{ showQuestion(); }}
-                else {{ showResult(); }}
-            }}, 1200);
-        }}
-
-        function showResult() {{
-            document.getElementById('quiz-section').style.display = 'none';
-            document.getElementById('result-section').style.display = 'block';
-            const total = QUIZ.length;
-            const pct = Math.round((quizScore / total) * 100);
-            let emoji, title, desc;
-            if (pct >= 80) {{
-                emoji = '🏆'; title = 'Tu me connais bien !';
-                desc = "Impressionnant — t'aurais peut-être dû postuler à ma place.";
-            }} else if (pct >= 50) {{
-                emoji = '👍'; title = 'Pas mal du tout !';
-                desc = "Tu as saisi l'essentiel. Le reste, on en parle autour d'un café ☕";
-            }} else {{
-                emoji = '😄'; title = 'On se connaît pas encore !';
-                desc = "Mais c'est exactement pour ça que ce site existe.";
-            }}
-            document.getElementById('result-emoji').textContent = emoji;
-            document.getElementById('result-title').textContent = title;
-            document.getElementById('result-desc').textContent = desc;
-            document.getElementById('result-scores').innerHTML = `
-                <div class="score-block">
-                    <div class="score-val">${{quizScore}}/${{total}}</div>
-                    <div class="score-lbl">Score Quiz</div>
-                </div>
-            `;
-        }}
-
-        function restartQuiz() {{
-            quizIndex = 0; quizScore = 0;
-            document.getElementById('result-section').style.display = 'none';
-            document.getElementById('quiz-section').style.display = 'block';
-            showQuestion();
-        }}
-
-        // Démarrer le quiz directement
-        showQuestion();
-    </script>
-    """
-
-    st.components.v1.html(quiz_html, height=480, scrolling=False)
+    st.components.v1.html(quiz_html, height=520, scrolling=False)
     st.markdown('</div>', unsafe_allow_html=True)
 
 
@@ -505,7 +342,8 @@ def render_runner() -> None:
         box-shadow: 0 4px 24px rgba(0,0,0,0.07);
         font-family: 'Inter', sans-serif;
     ">
-        <div id="score-display2" style="text-align:right;font-size:1rem;font-weight:700;color:#3b82f6;margin-bottom:0.5rem;">
+        <div id="score-display2" style="text-align:right;font-size:1rem;font-weight:700;
+                                        color:#3b82f6;margin-bottom:0.5rem;">
             Score : <span id="score2">0</span>
         </div>
         <canvas id="gameCanvas2" width="800" height="250" style="
@@ -513,7 +351,8 @@ def render_runner() -> None:
             background:linear-gradient(180deg,#e0f2fe 0%,#f0f9ff 60%,#bfdbfe 100%);
             cursor:pointer;width:100%;max-width:800px;
         "></canvas>
-        <div id="game-message2" style="text-align:center;margin-top:0.8rem;font-size:0.9rem;color:#64748b;">
+        <div id="game-message2" style="text-align:center;margin-top:0.8rem;
+                                       font-size:0.9rem;color:#64748b;">
             Appuie sur ESPACE ou clique pour sauter !
         </div>
     </div>
@@ -530,7 +369,7 @@ def render_runner() -> None:
         let gameState2 = 'waiting';
         let score2 = 0;
         let frameCount2 = 0;
-        let speed2 = 5;
+        let speed2 = 4;
         let animId2;
 
         const player2 = {{
@@ -547,12 +386,12 @@ def render_runner() -> None:
         ];
 
         let obstacles2 = [];
-        let nextObstacle2 = 80;
+        let nextObstacle2 = 100;
 
         function jump2() {{
             if (gameState2 === 'waiting') {{ startGame2(); return; }}
             if (gameState2 === 'running' && !player2.jumping) {{
-                player2.vy = -15;
+                player2.vy = -16;
                 player2.jumping = true;
             }}
         }}
@@ -565,8 +404,8 @@ def render_runner() -> None:
 
         function startGame2() {{
             gameState2 = 'running';
-            score2 = 0; frameCount2 = 0; speed2 = 5;
-            obstacles2 = []; nextObstacle2 = 80;
+            score2 = 0; frameCount2 = 0; speed2 = 4;
+            obstacles2 = []; nextObstacle2 = 100;
             player2.y = player2.groundY;
             player2.vy = 0; player2.jumping = false;
             document.getElementById('game-message2').textContent = 'ESPACE ou clic pour sauter !';
@@ -584,9 +423,9 @@ def render_runner() -> None:
             frameCount2++;
             score2 = Math.floor(frameCount2 / 6);
             document.getElementById('score2').textContent = score2;
-            if (frameCount2 % 300 === 0) speed2 += 0.5;
+            if (frameCount2 % 400 === 0) speed2 += 0.4;
 
-            player2.vy += 0.9;
+            player2.vy += 0.8;
             player2.y += player2.vy;
             if (player2.y >= player2.groundY) {{
                 player2.y = player2.groundY;
@@ -597,7 +436,7 @@ def render_runner() -> None:
             if (nextObstacle2 <= 0) {{
                 const obs = OBSTACLES2[Math.floor(Math.random() * OBSTACLES2.length)];
                 obstacles2.push({{ x: 820, y: 193, w: 50, h: 60, emoji: obs.emoji }});
-                nextObstacle2 = 60 + Math.floor(Math.random() * 60);
+                nextObstacle2 = 70 + Math.floor(Math.random() * 60);
             }}
 
             obstacles2.forEach(o => o.x -= speed2);
