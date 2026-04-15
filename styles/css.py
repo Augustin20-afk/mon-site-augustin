@@ -139,7 +139,16 @@ div[id="contact"] {
 a[href^="#"] {
     text-decoration: none !important;
 }
+/* ── CACHER ICÔNES ANCRES STREAMLIT ──────────────────── */
+.world-card-title a,
+.section-title a,
+h1 a, h2 a, h3 a {
+    display: none !important;
+}
 
+[data-testid="stMarkdownContainer"] a[href^="#"] {
+    display: none !important;
+}
         /* ── HERO WRAPPER ─────────────────────────────────────── */
         .hero-wrapper {
             padding: 3rem 2rem 2rem 2rem;
