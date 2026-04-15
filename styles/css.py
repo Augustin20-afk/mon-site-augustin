@@ -124,6 +124,21 @@ div[data-testid="stButton"] button:hover {
             font-size: 0.9rem;
             border: 1px solid #e2e8f0;
         }
+        /* ── CACHER LES ANCRES ────────────────────────────────── */
+div[id="accueil"],
+div[id="apropos"],
+div[id="experiences"],
+div[id="projets"],
+div[id="quiz"],
+div[id="contact"] {
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+a[href^="#"] {
+    text-decoration: none !important;
+}
 
         /* ── HERO WRAPPER ─────────────────────────────────────── */
         .hero-wrapper {

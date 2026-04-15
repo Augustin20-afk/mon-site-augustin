@@ -138,6 +138,6 @@ def render_world() -> None:
             unsafe_allow_html=True,
         )
 
-    Citation ---
+    # --- Citation ---
 
     st.markdown('</div>', unsafe_allow_html=True)
