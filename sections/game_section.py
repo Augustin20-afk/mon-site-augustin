@@ -306,7 +306,7 @@ def render_game() -> None:
     </script>
     """
 
-    st.components.v1.html(quiz_html, height=520, scrolling=False)
+    st.components.v1.html(quiz_html, height=650, scrolling=False)
     st.markdown('</div>', unsafe_allow_html=True)
 
 
