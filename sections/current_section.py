@@ -69,4 +69,4 @@ def render_current() -> None:
     </div>
     """
 
-components.html(html, height=550, scrolling=False)
+components.html(html, height=500, scrolling=False)
