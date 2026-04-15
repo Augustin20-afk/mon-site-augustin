@@ -39,8 +39,8 @@ def render_footer() -> None:
 
         <div class="footer-buttons">
             <a href="mailto:{EMAIL}" class="footer-btn btn-mail">
-                ✉️ Échanger avec moi
-            </a>
+    ✉️ augustin.leclercq.ci@gmail.com
+</a>
             <a href="{LINKEDIN_URL}" target="_blank" class="footer-btn btn-linkedin">
                 LinkedIn
             </a>
