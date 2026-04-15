@@ -78,14 +78,17 @@ def render_world() -> None:
         st.markdown(
             f"""
             <div class="world-card world-card-photo">
-                {_img(PHOTO_CAMPING, "world-photo", "Camping")}
+                {_img(PHOTO_CAMPING, "world-photo", "Camping La Peyrugue")}
                 <div class="world-card-overlay">
                     <span class="world-card-overlay-icon">🏕️</span>
                     <h3 class="world-card-title">Le camping familial, mon premier terrain</h3>
                     <p class="world-card-text">
-                        Grandir dans un business familial, c'est comprendre tôt que rien n'avance tout seul.
-                        Le camping m'a transmis une culture du terrain, du service, de l'énergie et du concret.
-                        C'est là que s'est construit une partie essentielle de ma façon de travailler aujourd'hui.
+                        En 2018, ma famille a repris le <strong>Camping La Peyrugue</strong>,
+                        niché à Daglan, au cœur de la vallée de la Dordogne. J'avais 14 ans.
+                        Très vite, j'ai compris ce que signifiait vraiment "travailler" :
+                        accueillir, organiser, s'adapter, tenir une maison ouverte à des centaines
+                        de personnes chaque été. C'est ce terrain-là, bien avant Coloplast,
+                        qui m'a appris le sens du service, de l'effort et du concret.
                     </p>
                 </div>
             </div>
@@ -119,14 +122,15 @@ def render_world() -> None:
         st.markdown(
             f"""
             <div class="world-card world-card-photo">
-                {_img(PHOTO_DOG, "world-photo", "Mon chien")}
+                {_img(PHOTO_NATURE, "world-photo", "Nature et voyages")}
                 <div class="world-card-overlay">
                     <span class="world-card-overlay-icon">🌍</span>
                     <h3 class="world-card-title">Voyages, ouverture et recul</h3>
                     <p class="world-card-text">
-                        Voyager, c'est sortir de ses repères, observer et apprendre autrement.
-                        J'y trouve une ouverture qui nourrit ma curiosité et ma façon d'aborder
-                        les situations : avec adaptabilité, écoute et envie de comprendre plus large.
+                        J'aime sortir de mes repères, observer d'autres façons de vivre
+                        et prendre du recul. Les voyages nourrissent ma curiosité et ma
+                        capacité d'adaptation — deux qualités que je retrouve aussi
+                        dans mon rapport au travail.
                     </p>
                 </div>
             </div>
@@ -134,6 +138,6 @@ def render_world() -> None:
             unsafe_allow_html=True,
         )
 
-    # --- Citation ---
+    Citation ---
 
     st.markdown('</div>', unsafe_allow_html=True)
