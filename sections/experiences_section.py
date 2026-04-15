@@ -5,12 +5,11 @@ import streamlit as st
 
 def render_experiences() -> None:
     """Affiche la section Expériences marquantes."""
-    
+
     st.markdown('<div id="experiences"></div>', unsafe_allow_html=True)
     st.markdown('<div class="experiences-wrapper">', unsafe_allow_html=True)
-st.markdown('<div id="experiences"></div>', unsafe_allow_html=True)
 
-st.markdown(
+    st.markdown(
         """
         <div class="section-header">
             <span class="section-tag">Expériences marquantes</span>
@@ -29,10 +28,10 @@ st.markdown(
         <div class="exp-grid">
             <div class="exp-card">
                 <div class="exp-card-top">
-                    <span class="exp-icon"></span>
+                    <span class="exp-icon">🇵🇱</span>
                     <span class="exp-tag">Terrain · International</span>
                 </div>
-                <h3 class="exp-title">Audit fournisseur à l'étranger</h3>
+                <h3 class="exp-title">Audit fournisseur en Pologne</h3>
                 <p class="exp-text">
                     Participer à un audit fournisseur à l'étranger a été une expérience
                     particulièrement formatrice. Ce type de mission demande préparation,
@@ -56,7 +55,6 @@ st.markdown(
                 </p>
             </div>
         </div>
-
         <div class="exp-conclusion">
             <span class="exp-conclusion-icon">💡</span>
             <p>
