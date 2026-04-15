@@ -140,15 +140,15 @@ div[data-testid="stButton"] button:hover {
             padding-top: 0.5rem;
         }
         .profile-photo {
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-            object-position: center top;
-            border-radius: 50%;
-            border: 3px solid #ffffff20;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease;
-        }
+    width: 260px;
+    height: 320px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 16px;
+    border: 3px solid #e2e8f0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+}
         .profile-photo:hover {
             transform: scale(1.03);
         }
