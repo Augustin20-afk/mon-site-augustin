@@ -6,26 +6,54 @@ import streamlit as st
 def render_navbar() -> None:
     """Affiche la barre de navigation fixe et le grand titre."""
     st.markdown(
-    """
-    <nav class="navbar">
-        <span class="navbar-brand">
-            Le Site Web d'<span>Augustin Leclercq</span>
-        </span>
-        <div class="navbar-links">
-            <a href="#accueil" class="navbar-link" onclick="document.getElementById('accueil').scrollIntoView({behavior:'smooth'});return false;">Accueil</a>
-            <a href="#apropos" class="navbar-link" onclick="document.getElementById('apropos').scrollIntoView({behavior:'smooth'});return false;">À propos</a>
-            <a href="#experiences" class="navbar-link" onclick="document.getElementById('experiences').scrollIntoView({behavior:'smooth'});return false;">Expériences</a>
-            <a href="#projets" class="navbar-link" onclick="document.getElementById('projets').scrollIntoView({behavior:'smooth'});return false;">Projets</a>
-            <a href="#quiz" class="navbar-link" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'});return false;">Quiz</a>
-            <a href="#contact" class="navbar-link" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Contact</a>
+        """
+        <div style="position:fixed;top:0;left:0;right:0;z-index:9999;
+                    background:rgba(255,255,255,0.97);
+                    border-bottom:1px solid #e2e8f0;
+                    padding:0.8rem 2rem;
+                    display:flex;align-items:center;justify-content:space-between;
+                    box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+            <span style="font-size:1rem;font-weight:700;color:#0f172a;">
+                Le Site Web d'<span style="color:#2563eb;">Augustin Leclercq</span>
+            </span>
+            <div style="display:flex;align-items:center;gap:1.5rem;">
+                <a href="#accueil" style="font-size:0.85rem;font-weight:600;
+                   color:#475569;text-decoration:none;"
+                   onclick="document.getElementById('accueil').scrollIntoView({behavior:'smooth'});return false;">
+                   Accueil</a>
+                <a href="#apropos" style="font-size:0.85rem;font-weight:600;
+                   color:#475569;text-decoration:none;"
+                   onclick="document.getElementById('apropos').scrollIntoView({behavior:'smooth'});return false;">
+                   À propos</a>
+                <a href="#experiences" style="font-size:0.85rem;font-weight:600;
+                   color:#475569;text-decoration:none;"
+                   onclick="document.getElementById('experiences').scrollIntoView({behavior:'smooth'});return false;">
+                   Expériences</a>
+                <a href="#projets" style="font-size:0.85rem;font-weight:600;
+                   color:#475569;text-decoration:none;"
+                   onclick="document.getElementById('projets').scrollIntoView({behavior:'smooth'});return false;">
+                   Projets</a>
+                <a href="#quiz" style="font-size:0.85rem;font-weight:600;
+                   color:#475569;text-decoration:none;"
+                   onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'});return false;">
+                   Quiz</a>
+                <a href="#contact" style="font-size:0.85rem;font-weight:600;
+                   color:#475569;text-decoration:none;"
+                   onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">
+                   Contact</a>
+            </div>
         </div>
-    </nav>
-    <div class="page-title-wrapper">
-        <h1 class="page-title-main">
-            Le Site Web d'<span>Augustin Leclercq</span>
-        </h1>
-        <p class="page-title-sub">Rigueur · Terrain · Ambition</p>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+        <div style="text-align:center;padding:6rem 2rem 2rem 2rem;
+                    max-width:960px;margin:0 auto;">
+            <h1 style="font-size:2.8rem;font-weight:800;color:#0f172a;
+                       letter-spacing:-0.02em;line-height:1.1;margin-bottom:0.6rem;">
+                Le Site Web d'<span style="color:#2563eb;">Augustin Leclercq</span>
+            </h1>
+            <p style="font-size:1rem;font-weight:600;color:#64748b;
+                      letter-spacing:0.15em;text-transform:uppercase;">
+                Rigueur · Terrain · Ambition
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )

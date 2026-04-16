@@ -6,6 +6,17 @@ def load_css():
     st.markdown(
         """
         <style>
+.stApp {
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 40%, #e2e8f0 100%);
+    color: #0f172a;
+}
+
+header[data-testid="stHeader"] {
+    background: transparent !important;
+    height: 0 !important;
+}
+
+/* reste du CSS... */
         * ── NAVBAR FIXE ──────────────────────────────────────── */
 .navbar {
     position: fixed !important;
@@ -21,6 +32,16 @@ def load_css():
     align-items: center !important;
     justify-content: space-between !important;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+}
+.navbar-links a {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #475569 !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    margin: 0 0.5rem !important;
 }
 
 .navbar-brand {
@@ -382,7 +403,8 @@ h1 a, h2 a, h3 a {
 
 /* Cacher la barre noire Streamlit */
 header[data-testid="stHeader"] {
-    display: none !important;
+    background: transparent !important;
+    height: 0 !important;
 }
 
 .work-style-grid {
