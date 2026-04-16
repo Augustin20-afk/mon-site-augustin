@@ -6,10 +6,52 @@ def load_css():
     st.markdown(
         """
         <style>
-        .stApp {
-            background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 40%, #e2e8f0 100%);
-            color: #0f172a;
-        }
+        * ── NAVBAR FIXE ──────────────────────────────────────── */
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    background: rgba(255,255,255,0.97) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 0.8rem 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+}
+
+.navbar-brand {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    text-decoration: none !important;
+}
+
+.navbar-brand span {
+    color: #2563eb !important;
+}
+
+.navbar-links {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+}
+
+.navbar-link {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #475569 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.navbar-link:hover {
+    color: #2563eb !important;
+    text-decoration: none !important;
+}
         .block-container {
             max-width: 1200px;
             padding-top: 2rem;
