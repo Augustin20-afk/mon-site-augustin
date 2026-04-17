@@ -7,10 +7,9 @@ def load_css():
         """
         <style>
 .stApp {
-    background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 40%, #e2e8f0 100%);
-    color: #0f172a;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 40%, #e2e8f0 100%) !important;
+    color: #0f172a !important;
 }
-
 header[data-testid="stHeader"] {
     background: transparent !important;
     height: 0 !important;

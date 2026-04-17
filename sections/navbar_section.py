@@ -2,12 +2,10 @@
 
 import streamlit as st
 
-
 def render_navbar() -> None:
-    """Affiche la barre de navigation fixe et le grand titre."""
     st.markdown(
         """
-        <div style="position:fixed;top:0;left:0;right:0;z-index:9999;
+        <div style="position:fixed;top:0;left:0;right:0;z-index:99999;
                     background:rgba(255,255,255,0.97);
                     border-bottom:1px solid #e2e8f0;
                     padding:0.8rem 2rem;
@@ -17,33 +15,15 @@ def render_navbar() -> None:
                 Le Site Web d'<span style="color:#2563eb;">Augustin Leclercq</span>
             </span>
             <div style="display:flex;align-items:center;gap:1.5rem;">
-                <a href="#accueil" style="font-size:0.85rem;font-weight:600;
-                   color:#475569;text-decoration:none;"
-                   onclick="document.getElementById('accueil').scrollIntoView({behavior:'smooth'});return false;">
-                   Accueil</a>
-                <a href="#apropos" style="font-size:0.85rem;font-weight:600;
-                   color:#475569;text-decoration:none;"
-                   onclick="document.getElementById('apropos').scrollIntoView({behavior:'smooth'});return false;">
-                   À propos</a>
-                <a href="#experiences" style="font-size:0.85rem;font-weight:600;
-                   color:#475569;text-decoration:none;"
-                   onclick="document.getElementById('experiences').scrollIntoView({behavior:'smooth'});return false;">
-                   Expériences</a>
-                <a href="#projets" style="font-size:0.85rem;font-weight:600;
-                   color:#475569;text-decoration:none;"
-                   onclick="document.getElementById('projets').scrollIntoView({behavior:'smooth'});return false;">
-                   Projets</a>
-                <a href="#quiz" style="font-size:0.85rem;font-weight:600;
-                   color:#475569;text-decoration:none;"
-                   onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'});return false;">
-                   Quiz</a>
-                <a href="#contact" style="font-size:0.85rem;font-weight:600;
-                   color:#475569;text-decoration:none;"
-                   onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">
-                   Contact</a>
+                <a href="#accueil" style="font-size:0.85rem;font-weight:600;color:#475569;text-decoration:none;">Accueil</a>
+                <a href="#apropos" style="font-size:0.85rem;font-weight:600;color:#475569;text-decoration:none;">À propos</a>
+                <a href="#experiences" style="font-size:0.85rem;font-weight:600;color:#475569;text-decoration:none;">Expériences</a>
+                <a href="#projets" style="font-size:0.85rem;font-weight:600;color:#475569;text-decoration:none;">Projets</a>
+                <a href="#quiz" style="font-size:0.85rem;font-weight:600;color:#475569;text-decoration:none;">Quiz</a>
+                <a href="#contact" style="font-size:0.85rem;font-weight:600;color:#475569;text-decoration:none;">Contact</a>
             </div>
         </div>
-        <div style="text-align:center;padding:6rem 2rem 2rem 2rem;
+        <div style="text-align:center;padding:5rem 2rem 2rem 2rem;
                     max-width:960px;margin:0 auto;">
             <h1 style="font-size:2.8rem;font-weight:800;color:#0f172a;
                        letter-spacing:-0.02em;line-height:1.1;margin-bottom:0.6rem;">
