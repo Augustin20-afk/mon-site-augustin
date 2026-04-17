@@ -14,14 +14,14 @@ def render_navbar() -> None:
             <span style="font-size:1rem;font-weight:700;color:#0f172a;">
                 Le Site Web d'<span style="color:#2563eb;">Augustin Leclercq</span>
             </span>
-            <div style="display:flex;align-items:center;gap:1.5rem;">
-                <a href="#accueil" style="font-size:0.85rem;font-weight:600;color:#475569;text-decoration:none;">Accueil</a>
-                <a href="#apropos" style="font-size:0.85rem;font-weight:600;color:#475569;text-decoration:none;">À propos</a>
-                <a href="#experiences" style="font-size:0.85rem;font-weight:600;color:#475569;text-decoration:none;">Expériences</a>
-                <a href="#projets" style="font-size:0.85rem;font-weight:600;color:#475569;text-decoration:none;">Projets</a>
-                <a href="#quiz" style="font-size:0.85rem;font-weight:600;color:#475569;text-decoration:none;">Quiz</a>
-                <a href="#contact" style="font-size:0.85rem;font-weight:600;color:#475569;text-decoration:none;">Contact</a>
-            </div>
+           <div style="display:flex;align-items:center;gap:1rem;flex-wrap:nowrap;overflow:hidden;">
+    <a href="#accueil" style="font-size:0.78rem;font-weight:600;color:#475569;text-decoration:none;white-space:nowrap;">Accueil</a>
+    <a href="#apropos" style="font-size:0.78rem;font-weight:600;color:#475569;text-decoration:none;white-space:nowrap;">À propos</a>
+    <a href="#experiences" style="font-size:0.78rem;font-weight:600;color:#475569;text-decoration:none;white-space:nowrap;">Expériences</a>
+    <a href="#projets" style="font-size:0.78rem;font-weight:600;color:#475569;text-decoration:none;white-space:nowrap;">Projets</a>
+    <a href="#quiz" style="font-size:0.78rem;font-weight:600;color:#475569;text-decoration:none;white-space:nowrap;">Quiz</a>
+    <a href="#contact" style="font-size:0.78rem;font-weight:600;color:#475569;text-decoration:none;white-space:nowrap;">Contact</a>
+</div>
         </div>
         <div style="text-align:center;padding:5rem 2rem 2rem 2rem;
                     max-width:960px;margin:0 auto;">
